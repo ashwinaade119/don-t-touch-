@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+Tue Aug 27 2024 16:50:01 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* varible.tf
+
+
+Created files:
+* .autogit/logs/log-27-7-2024-16-49-53.txt
+
+
+Deleted files:
+
+
+Renamed files:
