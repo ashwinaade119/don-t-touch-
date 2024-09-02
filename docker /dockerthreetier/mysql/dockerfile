@@ -22,4 +22,4 @@ RUN cp /etc/mysql/student.sql /docker-entrypoint-initdb.d
 
 EXPOSE 3306
 
-CMD /bin/bash
+CMD mysqld 
