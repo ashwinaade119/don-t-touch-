@@ -23,3 +23,16 @@ RUN cp /etc/mysql/student.sql /docker-entrypoint-initdb.d
 EXPOSE 3306
 
 CMD mysqld 
+
+
+
+
+
+
+# docker run -d -p 3306:3306 --name mysql-container \
+# -e MYSQL_DATABASE=studentapp \
+# -e MYSQL_USER=root \
+# -e MYSQL_PASSWORD=1234 \
+# -e MYSQL_ROOT_PASSWORD=1234 \
+# iid  
+# ctrl+capslock+/
