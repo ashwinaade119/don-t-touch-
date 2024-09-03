@@ -8,7 +8,7 @@ RUN apt update
 RUN apt install apache2 unzip -y
 RUN rm -rf /var/www/html/index.html
 #we are copying source code from local storage
-COPY counter/ * /var/www/html/
+COPY index.html * /var/www/html/
 #we are moving to /var/www/html
 WORKDIR /var/www/html
 #we are unzipping and extracting the source code in default deployment enviornment locationx
@@ -16,3 +16,13 @@ WORKDIR /var/www/html
 EXPOSE 80
 #we are providing container a processs 
 CMD ["apachectl", "-D" ,"FOREGROUND"]
+
+
+
+
+
+
+
+
+
+#counter html css in one script cgpt
