@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light Simulation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .traffic-light {
+            width: 150px;
+            height: 350px;
+            background-color: #333;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .light {
+            width: 100px;
+            height: 100px;
+            background-color: #4b5069; /* Default color for all lights */
+            border-radius: 50%;
+            border: 2px solid #000;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .button {
+            width: 100px;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+        }
+
+        #stopButton {
+            background-color: #cf1124; /* Default color for stop button */
+        }
+
+        #readyButton {
+            background-color: #1f1d41; /* Default color for ready button */
+        }
+
+        #goButton {
+            background-color: #199473; /* Default color for go button */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="traffic-light">
+            <div id="stopLight" class="light"></div>
+            <div id="readyLight" class="light"></div>
+            <div id="goLight" class="light"></div>
+        </div>
+
+        <div class="button-container">
+            <button id="stopButton" class="button" onclick="onStop()">Stop</button>
+            <button id="readyButton" class="button" onclick="onReady()">Ready</button>
+            <button id="goButton" class="button" onclick="onGo()">Go</button>
+        </div>
+    </div>
+
+    <script>
+        let intervalId;
+        let currentState = 'stop'; // Start with the 'stop' state
+
+        function updateTrafficLight() {
+            switch (currentState) {
+                case 'stop':
+                    onStop();
+                    currentState = 'ready';
+                    break;
+                case 'ready':
+                    onReady();
+                    currentState = 'go';
+                    break;
+                case 'go':
+                    onGo();
+                    currentState = 'stop';
+                    break;
+            }
+        }
+
+        function onStop() {
+            document.getElementById("stopLight").style.backgroundColor = "#cf1124";
+            document.getElementById("readyLight").style.backgroundColor = "#4b5069";
+            document.getElementById("goLight").style.backgroundColor = "#4b5069";
+            document.getElementById("stopButton").style.backgroundColor = "#cf1124";
+            document.getElementById("readyButton").style.backgroundColor = "#1f1d41";
+            document.getElementById("goButton").style.backgroundColor = "#1f1d41";
+        }
+
+        function onReady() {
+            document.getElementById("stopLight").style.backgroundColor = "#4b5069";
+            document.getElementById("readyLight").style.backgroundColor = "#f7c948";
+            document.getElementById("goLight").style.backgroundColor = "#4b5069";
+            document.getElementById("stopButton").style.backgroundColor = "#1f1d41";
+            document.getElementById("readyButton").style.backgroundColor = "#f7c948";
+            document.getElementById("goButton").style.backgroundColor = "#1f1d41";
+        }
+
+        function onGo() {
+            document.getElementById("stopLight").style.backgroundColor = "#4b5069";
+            document.getElementById("readyLight").style.backgroundColor = "#4b5069";
+            document.getElementById("goLight").style.backgroundColor = "#199473";
+            document.getElementById("stopButton").style.backgroundColor = "#1f1d41";
+            document.getElementById("readyButton").style.backgroundColor = "#1f1d41";
+            document.getElementById("goButton").style.backgroundColor = "#199473";
+        }
+
+        // Start the traffic light cycle every 3 seconds
+        function startAutomaticCycle() {
+            intervalId = setInterval(updateTrafficLight, 3000); // 3000 milliseconds = 3 seconds
+        }
+
+        // Stop the automatic cycle
+        function stopAutomaticCycle() {
+            clearInterval(intervalId);
+        }
+
+        // Start the cycle when the page loads
+        window.onload = startAutomaticCycle;
+    </script>
+</body>
+</html>
