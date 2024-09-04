@@ -20,4 +20,4 @@ def get_hit_count():
 @app.route('/')
 def hello():
     count = get_hit_count()
-    return 'Hello SWapnil! ek advance de nhi tar kahi pn upload karak.\n'.format(count)
+    return 'Hello everyone, This project is deployed with the help of docker compose.\n'.format(count)
