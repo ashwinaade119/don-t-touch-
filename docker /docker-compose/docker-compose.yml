@@ -10,7 +10,8 @@ services:
 
   nginxfrontendcontwo:
     build: .
-    ports: - "32769:80"  # Commented out; if needed, uncomment and adjust
+    ports: 
+    - "32769:80"  # Commented out; if needed, uncomment and adjust
     network_mode: bridge
     volumes:
       - myapp2:/usr/share/nginx/html/
