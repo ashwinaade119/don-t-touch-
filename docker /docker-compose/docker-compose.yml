@@ -1,10 +1,8 @@
-version: '3.8'  # Specify a version for the Docker Compose file format
-
 services:
   nginxfrontendconone:
     build: .
     ports:
-      - "81:81"
+      - "81:80"
     network_mode: bridge
     container_name: frontend  # Fixed the spelling of "frontend"
     volumes:
@@ -12,8 +10,8 @@ services:
 
   nginxfrontendcontwo:
     build: .
-    # ports: - "81:81"  # Commented out; if needed, uncomment and adjust
-    network_mode: host
+    ports: - "32769:80"  # Commented out; if needed, uncomment and adjust
+    network_mode: bridge
     volumes:
       - myapp2:/usr/share/nginx/html/
     container_name: frontend2  # Fixed the spelling of "frontend" and updated name
@@ -22,5 +20,3 @@ volumes:
   myapp:
   myapp2:
 
-networks:
-  default:  # Using default network mode; if you need a custom network, adjust here
