@@ -12,7 +12,7 @@ services:          #default synxtax
   frontendnginxsecond:  #naming convention for another container
     build: .
      ports:
-       - '81:81'
+       - '81:80'
     container_name: nginxfrontendcontsecond
     network_mode:
         none  
