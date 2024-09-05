@@ -1,7 +1,7 @@
 
 services:          #default synxtax
   frontendnginxfirst:        #nami /ng convention for container
-    build: /compose #location of the docker file
+    build: . #location of the docker file
     ports:     #port mapping my container to host port 
       - '80:80'  
     container_name: nginxfrontendcontfirst  #providing name to container
@@ -10,7 +10,7 @@ services:          #default synxtax
     network_mode:   #providing network mode
         bridge
   frontendnginxsecond:  #naming convention for another container
-    build: /compose
+    build: .
     # ports:
     #   - '81:81'
     container_name: nginxfrontendcontsecond
