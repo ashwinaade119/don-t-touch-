@@ -1,16 +1,14 @@
-version: '3.8'  # Specify the version of the Docker Compose file format
 
-services:
-  frontendnginxfirst:
-    build: .  # Location of the Dockerfile for Nginx (relative to the docker-compose.yml file)
-    ports:
-      - '80:80'  # Map port 80 of the container to port 80 of the host
-    container_name: nginxfrontendcontfirst  # Provide a name to the container
+services:          #default synxtax
+  frontendnginxfirst:        #naming convention for container
+    build: . #location of the docker file
+    ports:     #port mapping my container to host port 
+      - '80:80'  
+    container_name: nginxfrontendcontfirst  #providing name to container
    
-  frontendapache:  # Renamed service to reflect Apache usage
-    build:
-      context: ./apache  # Directory for the Dockerfile for Apache
-    container_name: apachefrontendcont  # Provide a name to the container
-    ports:
-      - '81:80'  # Map port 80 of the container to port 81 of the host
+  frontendnginxsecond:  #naming convention for another container
+    build: .
+    # ports:
+    #   - '81:81'
+    container_name: nginxfrontendcontsecond
     
