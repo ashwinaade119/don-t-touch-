@@ -1,7 +1,7 @@
 
 services:          #default synxtax
   frontendnginxfirst:        #naming convention for container
-    build: /root//home/ubuntu/don-t-touch-/docker /docker-compose/compose  #location of the docker file
+    build: /root//home/ubuntu/don-t-touch-/docker\ /docker-compose/compose  #location of the docker file
     ports:     #port mapping my container to host port 
       - '80:80'  
     container_name: nginxfrontendcontfirst  #providing name to container
@@ -10,7 +10,7 @@ services:          #default synxtax
     network_mode:   #providing network mode
         bridge
   frontendnginxsecond:  #naming convention for another container
-    build: /root//root//home/ubuntu/don-t-touch-/docker /docker-compose/compose
+    build: /root//root//home/ubuntu/don-t-touch-/docker\ /docker-compose/compose
     # ports:
     #   - '81:81'
     container_name: nginxfrontendcontsecond
