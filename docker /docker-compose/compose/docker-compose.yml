@@ -11,8 +11,6 @@ services:          #default synxtax
         bridge
   frontendnginxsecond:  #naming convention for another container
     build: .
-     ports:
-       
     container_name: nginxfrontendcontsecond
     network_mode:
         none  
