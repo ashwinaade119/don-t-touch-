@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservices Frontend</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4682b4;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4682b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4169e1;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the Microservices Frontend</h1>
+
+    <ul>
+        <li>
+            <button onclick="window.location.href='http://65.1.135.212:5001/traffic'">Traffic Light Service</button>
+        </li>
+        <li>
+            <button onclick="window.location.href='http://65.1.135.212:5002/puppy'">Puppy Service</button>
+        </li>
+        <li>
+            <button onclick="window.location.href='http://65.1.135.212:5003/front'">front Service</button>
+        </li>
+    </ul>
+
+    <script>
+        // Add more interactivity if required, like event listeners or animations
+    </script>
+
+</body>
+</html>
