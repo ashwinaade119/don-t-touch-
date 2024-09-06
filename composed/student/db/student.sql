@@ -1,4 +1,3 @@
-
 CREATE DATABASE  studentapp;
 use studentapp;
 

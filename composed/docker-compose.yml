@@ -1,0 +1,35 @@
+services:
+project1:
+    build: project1/
+    ports:
+      - "81:80"
+  network_mode:brige
+  container_name:puppy
+
+project2:
+    build: project2/
+    ports:
+      - "82:80"
+  network_mode:brige
+  container_name:traffic
+
+project3:
+    build: student/backend
+    ports:
+      - "8080:8080"
+  network_mode:brige
+  container_name:puppy
+
+project4:
+    build: student/frontend/
+    ports:
+      - "80:80"
+  network_mode:brige
+  container_name:traffic
+
+project5:
+    build: student/db/
+    ports:
+      - "3306:3306"
+  network_mode:brige
+  container_name:traffic
