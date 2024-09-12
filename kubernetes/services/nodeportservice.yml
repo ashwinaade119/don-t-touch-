@@ -5,7 +5,7 @@ metadata:
       name: nodeport
 spec:
     selector:
-        app:  nginxapp2
+        app:  nginxapp1
     type: NodePort
     ports:
       - port: 80
