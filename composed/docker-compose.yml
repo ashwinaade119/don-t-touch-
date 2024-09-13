@@ -25,11 +25,11 @@ services:
     ports:
       - "80:80"
     network_mode: bridge
-    container_name: traffic
+    container_name: student
 
   project5:
     build: student/db/
     ports:
       - "3306:3306"
     network_mode: bridge
-    container_name: traffic
+    container_name: db
