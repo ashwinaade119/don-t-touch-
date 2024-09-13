@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
         name: apptest
-        namespace: testns
+        namespace: devops
         labels:
             app: apptest
 spec:
@@ -22,7 +22,7 @@ apiVersion: v1
 kind:  Service
 metadata:
       name: nodeportdev
-      namespace: testns
+      namespace: devops
 spec:
     selector:
         app:  apptest
