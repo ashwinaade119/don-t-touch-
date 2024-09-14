@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata: 
       name: replicasetin
       labels:
-            app: replicaset1
+            app: in
 spec:
     replicas: 3  #specify number of pod's replica to be created. 
     template:
@@ -11,7 +11,7 @@ spec:
       metadata:
         name: replicaset1
         labels:
-            app: replicaset1
+            app: in
       spec:
           containers:
               - name: nginxcont1
