@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1  
 kind: ReplicaSet
 metadata: 
@@ -9,7 +10,7 @@ spec:
     template:
           #write here your pod's script from metadata and spec.
       metadata:
-        name: replicaset1
+        name: in
         labels:
             app: in
       spec:
@@ -26,4 +27,4 @@ spec:
                       name: http  
     selector: 
         matchExpressions:
-          - {key: app, operator: In, values: [ina , replicaset2]}                  
+          - {key: app, operator: In, values: [in , replicaset2]}                  
