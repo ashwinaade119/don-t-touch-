@@ -26,4 +26,4 @@ spec:
                       name: http  
     selector: 
         matchExpressions:
-          - {key: app, operator: In, values: [replicaset1 , replicaset2]}                  
+          - {key: app, operator: In, values: [ina , replicaset2]}                  
