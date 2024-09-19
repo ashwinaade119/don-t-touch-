@@ -10,7 +10,7 @@ spec:
       metadata:  #like a tag
          name: pods
          labels: 
-            app: ss
+            app: pods
       spec:
         containers:
             - name: mypodss-cont
