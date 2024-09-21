@@ -1,0 +1,29 @@
+apiVersion: v1  # api version
+kind:  PersistentVolume   # type of a k8s object we are usig
+metadata: 
+  name: ebs-pv  # name of volume 
+spec: 
+  capacity:  # capacity
+    storage: 10Gi  # storage allocate to pv 10gb
+  volumeMode: Filesystem     # 
+  accessModes:
+    - ReadWriteOnce  # permissions to access pv
+  storageClassName: gp3  # storage type 
+  persistentVolumeReclaimPolicy: Retain
+  csi:      #  Container Storage Interface
+    driver: ebs.csi.aws.com    
+    volumeHandle: vol-01d92e69c141e8565 # your efs id 
+
+--- 
+#pvc
+apiVersion: v1  # api version to 
+kind: PersistentVolumeClaim  # type of object
+metadata: 
+  name: ebs-claim  #name of pvc
+spec: 
+ accessModes:
+   - ReadWriteOnce  # permissions
+ storageClassName: gp3 # type of storage
+ resources:
+    requests:  # storage request to pv or claim
+      storage: 8Gi  # claiming storage
