@@ -4,7 +4,7 @@ metadata:
   name: ebs-pv  # name of volume 
 spec: 
   capacity:  # capacity
-    storage: 10Gi  # storage allocate to pv 10gb
+    storage: 8Gi  # storage allocate to pv 10gb
   volumeMode: Filesystem     # 
   accessModes:
     - ReadWriteOnce  # permissions to access pv
