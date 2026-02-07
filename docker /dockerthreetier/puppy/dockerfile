@@ -2,9 +2,9 @@
 FROM nginx:alpine
 
 # Copy the application files to the NGINX HTML directory
-COPY index.html /usr/share/nginx/html/
-COPY style.css /usr/share/nginx/html/
-COPY app.js /usr/share/nginx/html/
+COPY index.html /var/www/html/
+COPY style.css /var/www/html/
+COPY app.js /var/www/html/
 
 # Expose port 80 to access the application
 EXPOSE 80
@@ -84,4 +84,5 @@ EXPOSE 80
 # docker images 
 # docker run -d -p 80:80 app 
 # docker ps 
+
 # hit ip
